@@ -67,13 +67,8 @@ class Main extends Component {
       item.isFiltered = true;
       return item;
     });
-    contacts.contactEmails.push({
-      name: '',
-      email: this.state.emailSearch,
-      photoUrl: '',
-      isSelected: true,
-      isFiltered: true
-    });
+    let newContact = { name: '', email: this.state.emailSearch, photoUrl: '', isSelected: true, isFiltered: true}
+    contacts.contactEmails.unshift(newContact);
     this.setState({ contacts, emailSearch: '' });
   }
 
@@ -356,7 +351,7 @@ class Main extends Component {
 
     return ( 
       <div>
-      <Hamburger toogleMenu = {this.toogleMenu.bind(this)} />
+      <Hamburger isMenuClicked = {this.state.isMenuClicked} toogleMenu = {this.toogleMenu.bind(this)} />
       { data } 
      </div> );
     }

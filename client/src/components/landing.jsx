@@ -66,7 +66,7 @@ class Landing extends Component {
         <div className = "meesage-thanks">Thank you so much for your support 
           <span role="img" aria-label="thank_emoji"> 🙏 </span>
           <span role="img" aria-label="praise_emoji"> 🙌 </span>
-          <div className = "message-small">Help us by inviting your friends and unlock premium features on launch</div>
+          <div className = "message-small">Invite your friends and unlock premium features on launch</div>
         </div>
         <div className = "message-text">People in front of you</div>
         <div className = "message-count">{this.props.userRank - 1}</div>
@@ -78,7 +78,7 @@ class Landing extends Component {
       </div> :
       <div className = "message">
         <div className = "meesage-thanks">Welcome back
-          <div className = "message-small">Help us by inviting your friends and unlock premium features on launch</div>
+          <div className = "message-small">Invite your friends and unlock premium features on launch</div>
         </div>
         <div className = "message-text">People in front of you</div>
         <div className = "message-count">{infront}</div>

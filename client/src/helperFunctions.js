@@ -1,7 +1,8 @@
 import constants from './constants.js';
 import _ from 'lodash';
 
-let network = constants.network;
+console.log(process.env.NODE_ENV, 'environment')
+const network = process.env.NODE_ENV === 'production' ? '/' : constants.network;
 
 function sendInviteMessage(data, cb) {
   return new Promise(function(resolve, reject) {
@@ -49,7 +50,7 @@ function sendEmailInvite(emails, waitingList, cb) {
       })
       .then(res => res.json())
       .then(data => {
-        console.log('fe -- sent invites',data)
+        console.log('fe -- sent invites', data)
         resolve(data);
       })
       .catch(err => {

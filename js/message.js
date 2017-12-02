@@ -9,9 +9,11 @@ var client = new twilio(accountSid, authToken);
 // msg91 account
 let authKey = `175496AXqgo00oxjQU59c15d9c`;
 
+// Environment specific domain url
+const domainUrl = process.env.NODE_ENV === 'production' ? 'https://www.gorndm.com' : 'https://www.localhost:3000';
+
 let message = {
   sendInviteMessage: (inviteId, countryId, mobileNumber) => {
-    let domainUrl = 'https://www.gorndm.com';
     let message = `Hi Friend, Someone has invited you to join Rndm. Click ${domainUrl}/${inviteId} to join now!`;
     if (countryId === 91) {
       return axios.get(`https://control.msg91.com/api/sendhttp.php?authkey=${authKey}&mobiles=&message=${message}&sender=GORNDM&route=4&country=${countryId}`);

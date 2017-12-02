@@ -10,7 +10,7 @@ class Hamburger extends Component {
       <div className="hamburger-menu">
         <div className="hamburger">
           <div className="hamburger-icon">
-            <input type="checkbox" onClick = {this.handleMenuToggle.bind(this)}/>
+            <input type="checkbox" onClick = {this.handleMenuToggle.bind(this)} checked={this.props.isMenuClicked}/>
             <span></span>
             <span></span>
             <span></span>

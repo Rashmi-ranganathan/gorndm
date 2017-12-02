@@ -7,16 +7,26 @@
     max-height: 100vh;
     max-width: 100vw;
   }
-  .signin, .landing, .invite-sent, .footer-wrapper, .header-landing, .header, .homepage, .policy, .unsubscribe, .contacts, .signin-body{
+  .signin,
+  .landing,
+  .invite-sent,
+  .footer-wrapper,
+  .header-landing,
+  .header,
+  .homepage,
+  .policy,
+  .unsubscribe,
+  .contacts,
+  .signin-body {
     padding: 0;
   }
   .background {
     display: none;
   }
   .scene path {
-    fill : #fff;
+    fill: #fff;
   }
-  .landing{
+  .landing {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -109,7 +119,7 @@
     font-weight: normal;
   }
   .signin-body-text-signin-mobile {
-    height: 15vh;
+    height: 27vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -161,7 +171,7 @@
   .signin-body-text-signin-details-button {
     font-size: 16px;
     position: absolute;
-    height: 8vh;
+    height: 6vh;
     width: 70vw;
     bottom: 4vh;
   }
@@ -203,24 +213,36 @@
     width: 100%;
     padding: 0 1%;
   }
+  .landing .meesage-thanks{
+    font-size: 24px;
+    padding: 1vh 10vw;
+  }
   .meesage-thanks {
     font-size: 26px;
     padding: 1vh 0;
   }
+  
+  .message-newuser .message-text,
+  .message-newuser .message-earn,
+  .message-newuser .message-small {
+    font-size: 12px;
+  }
+  .message-newuser .message-count {
+    font-size: 45px;
+  }
+
+  .message-text,
+  .message-earn,
   .message-small {
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: normal;
     line-height: 1.5;
-    padding: 3% 0;
+  }
+  .message-small {
     display: none;
   }
-  .message-text {
-    font-size: 12px;
-  }
   .message-count {
-    font-size: 22px;
-  }
-  .message-earn {
-    font-size: 12px;
+    font-size: 35px;
   }
   .contacts {
     width: 100vw;
@@ -247,17 +269,21 @@
     border-bottom: 1px solid #e6e6e6;
   }
   .contacts-send {
-    font-size: 16px;
-    font-size: 16px;
+    min-height: 6vh;
+    max-height: 6vh;
+    font-size: 14px;
+    width: 70%;
+    margin: 2vh auto;
   }
   .contacts-send:hover {
     font-size: 16px;
   }
   .message .contact-fetch {
-    min-height: 6vh;
-    max-height: 6vh;
-    font-size: 16px;
-    width: 80%;
+    font-size: 13px;
+    border-radius: 12px;
+    min-height: 5vh;
+    max-height: 5vh;
+    width: 70%;
     margin: 1vh auto;
   }
   .ranklist {
@@ -268,7 +294,7 @@
     min-height: 44vh;
     width: 100%;
   }
-  .ranklist-header-space{
+  .ranklist-header-space {
     min-width: 5%;
     min-width: 5%;
   }
@@ -296,14 +322,14 @@
     width: 70%;
     height: 6vh;
   }
-  .dot-dot-item{
+  .dot-dot-item {
     padding: 0;
   }
   .dot-dot-item:after {
     font-size: 35px;
   }
   .message-newuser {
-    margin: 0;
+    margin: 3vh 0 0 0;
   }
   .invite-sent-text {
     width: 80%;
@@ -372,28 +398,28 @@
   .hamburger-icon input:checked~span:nth-last-child(2) {
     transform: rotate(-45deg) translate(-3px, 8px);
   }
-  .policy-text-points{
-    padding: 0 5vw;  
+  .policy-text-points {
+    padding: 0 5vw;
   }
   .policy-text {
     font-size: 16px;
   }
-  .policy-text-header{
+  .policy-text-header {
     font-size: 28px;
   }
-  .unsubscribe-content-title{
+  .unsubscribe-content-title {
     font-size: 26px;
   }
-  .unsubscribe-content-text{
+  .unsubscribe-content-text {
     font-size: 12px;
   }
-  .mobile-header-links{
+  .mobile-header-links {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%
   }
-  .mobile-header-links div{
+  .mobile-header-links div {
     padding: 0 5vw;
   }
   .avatar,
@@ -418,14 +444,36 @@
   .policy-text {
     font-size: 14px;
   }
-  .policy-text-header{
+  .policy-text-header {
     font-size: 26px;
   }
-  .unsubscribe-content-title{
+  .unsubscribe-content-title {
     font-size: 24px;
   }
-  .unsubscribe-content-text{
+  .unsubscribe-content-text {
     font-size: 11px;
+  }
+  .message-text,
+  .message-earn,
+  .message-small {
+    font-size: 12px;
+  }
+  .message-count {
+    font-size: 30px;
+  }
+  .ranklist-item {
+    margin: 1% 0;
+  }
+  .signin-body-text-tagline{
+    font-size: 22px;
+  }
+  .message-newuser .message-text,
+  .message-newuser .message-earn,
+  .message-newuser .message-small {
+    font-size: 11px;
+  }
+  .message-newuser .message-count {
+    font-size: 40px;
   }
 }
 
@@ -453,7 +501,8 @@
     padding: 3%;
     height: 6vh;
   }
-  .header-landing-title, .header-mobile .header-title {
+  .header-landing-title,
+  .header-mobile .header-title {
     font-size: 36px;
   }
   .contacts-header-text {
@@ -488,8 +537,9 @@
     min-height: 25vh;
     max-height: 25vh;
   }
-  .contacts-send {
+  .contacts-send, .message .contact-fetch {
     height: 40px;
+    border-radius: 10px;
   }
   .contact-list-item {
     display: flex;
@@ -565,13 +615,40 @@
   .policy-text {
     font-size: 12px;
   }
-  .policy-text-header{
+  .policy-text-header {
     font-size: 22px;
   }
-  .unsubscribe-content-title{
+  .unsubscribe-content-title {
     font-size: 20px;
   }
-  .unsubscribe-content-text{
+  .unsubscribe-content-text {
     font-size: 10px;
+  }
+  .header-profile{
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+  .header-profile-name, .header-profile-coins{
+    font-size: 16px;
+  }
+  .header-profile-coinsimage{
+    min-height: 15px;
+    min-width: 15px;
+  }
+  .message-newuser .meesage-thanks{
+    font-size: 22px;
+  }
+  .message-newuser .message-text,
+  .message-newuser .message-earn,
+  .message-newuser .message-small {
+    font-size: 11px;
+  }
+  .message-newuser .message-count {
+    font-size: 36px;
+  }
+  .contacts-header-text,
+  .contacts-header-select button,
+  .contacts-header-clear button{
+    font-size: 11px;
   }
 }

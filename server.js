@@ -11,9 +11,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors())
 
+console.log('environment', process.env.NODE_ENV)
+
 // Express only serves static assets in production
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static(`${__dirname}/client/build`));
 }
 
 const router = express.Router();

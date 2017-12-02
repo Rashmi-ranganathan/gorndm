@@ -51,18 +51,17 @@ body {
 }
 
 .header {
-  min-height: 10%;
-  max-height: 10%;
+  height: 10%;
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: space-between;  
 }
 
 .header-title,
 .header-landing-title {
   min-height: 10vh;
   max-height: 10vh;
-  width: 80vw;
   color: #fa226d;
   font-size: 44px;
   font-weight: bold;
@@ -85,7 +84,6 @@ body {
 }
 
 .header-profile div {
-  padding: 0 2%;
   min-height: 25px;
   min-width: 25px;
   cursor: pointer;
@@ -115,7 +113,7 @@ body {
 
 .header-landing {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   height: 10%;
 }
@@ -131,7 +129,7 @@ body {
 }
 
 .header-profile {
-  width: auto;
+  min-width: 2vw;
   display: flex;
   margin: 3vh 0 1vh 0;
   padding-bottom: 10px;
@@ -186,31 +184,32 @@ body {
 }
 .header-profile-name {
   font-family: 'Gotham Bold';
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.1px;
   color: #fa226b;
   display: inline-block;
-  width: 100px;
-  white-space: nowrap;
-  overflow: hidden;
+  text-align: right;
 }
 
 .header-profile-coins {
   font-family: 'Gotham Bold';
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   width: 50px;
   text-align: right;
   letter-spacing: -0.3px;
   color: #ac21f9;
+  padding: 0 1% 0 2%;
 }
 
-.header-profile-coinsimage,
+.header-profile .header-profile-coinsimage,
 .ranklist-item-value-coinimage {
   background-image: url('./assest/images/coins.svg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top center;
+  min-height: 20px;
+  min-width: 20px;
 }
 
 
@@ -228,6 +227,7 @@ body {
 
 .signin-body-text {
   max-width: 30vw;
+  min-width: 30vw;
 }
 
 .signin-body-text-tagline {
@@ -323,8 +323,10 @@ body {
 
 /* FOOTER  */
 .footer-wrapper {
-  min-height: 3vh;
-  max-height: 3vh;
+  height: 5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer {
@@ -334,15 +336,16 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  max-height: 100%;
+  height: inherit;
+  width: 100%;
 }
 
 .footer-left {
-  color: #f92261;
   cursor: pointer;
   width: 20%;
   max-height: 100%;
   transition: all .35s ease-in-out;
+  color: #f92261;
 }
 
 .footer-left:hover {
@@ -352,7 +355,6 @@ body {
 }
 
 .footer-right {
-  color: #928ea0;
   display: flex;
   max-height: 100%;
   justify-content: flex-end;
@@ -361,7 +363,7 @@ body {
 }
 
 .footer-right a {
-  color: black;
+  color: #f92261;  
   max-width: 50%;
   max-height: 100%;
   padding: 0 1%;
@@ -393,7 +395,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  max-width: 180px;
+  max-width: 150px;
   margin: 0 auto;
   position: relative;
   top: 50%;
@@ -403,7 +405,8 @@ body {
 }
 
 .blobs:after {
-  top: 40px;
+  top: 30px;
+  left: 0;
   position: absolute;
   content: 'Loading...';
   height: 100%;
@@ -415,9 +418,9 @@ body {
 }
 
 .blob {
-  height: 40px;
-  width: 40px;
-  margin: 0 5px;
+  height: 20px;
+  width: 20px;
+  margin: 0 3px;
   background: #fa227a;
   border-radius: 4em;
 }
@@ -477,8 +480,8 @@ body {
 
 .homepage {
   display: flex;
-  min-height: 70vh;
-  max-height: 70vh;
+  min-height: 75vh;
+  max-height: 75vh;
   align-items: flex-start;
   justify-content: space-between;
 }
@@ -494,32 +497,36 @@ body {
 
 .contacts-header {
   display: flex;
-  align-items: center;
+  height: 4vh;  
+  align-items: flex-start;
 }
 
 .contacts-header-text {
   font-family: 'Gotham Bold';
   font-size: 16px;
   font-weight: 500;
-  letter-spacing: 0.1px;
   text-align: left;
   color: #fa226b;
   width: 70%;
 }
-
 .contacts-header-select,
-.contacts-header-clear {
-  width: 15%;
-  font-family: 'Gotham Light';
-  font-size: 14px;
-  line-height: 2.57;
-  letter-spacing: 0.1px;
+.contacts-header-clear{
+  display: flex;
+}
+.contacts-header-select{
+  width: 20%;
+}
+.contacts-header-clear{
+  width: 10%;
 }
 
 .contacts-header-select button,
 .contacts-header-clear button {
+  font-family: 'Gotham Light';
+  letter-spacing: 0.1px;
   background: none;
   border: none;
+  font-size: 14px;
   width: 100%;
   text-align: right;
   cursor: pointer;
@@ -631,7 +638,7 @@ body {
 .contact-fetch {
   margin: 2vh auto;
   font-family: 'Gotham Bold';
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   letter-spacing: 0.2px;
   text-align: center;
@@ -651,7 +658,7 @@ body {
 
 .contacts-send:hover,
 .contact-fetch:hover {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 900;
   /* background-image: linear-gradient(215deg, #ff25fd, #f82020); */
   transition: all 0.7s ease-in-out;
@@ -675,8 +682,27 @@ body {
   box-sizing: border-box;
 }
 
-.message-newuser {
-  margin-top: 7vh;
+.message-newuser .message-small{
+  padding: 1vh 0;
+}
+.message-newuser .message-text,
+.message-newuser .message-earn,
+.message-newuser .message-small {
+  font-size: 16px;
+}
+.message-newuser .message-count {
+  font-size: 45px;
+}
+
+.message-text,
+.message-earn,
+.message-small {
+  font-size: 14px;
+  font-family: 'Gotham Light';
+  letter-spacing: 0.2px;
+  line-height: 2;
+  font-weight: normal;
+  color: #928ea0;
 }
 
 .meesage-thanks {
@@ -689,39 +715,14 @@ body {
   padding: 3vh 0;
 }
 
-.message-text {
-  font-family: 'Gotham Light';
-  font-size: 20px;
-  letter-spacing: 0.2px;
-  color: #928ea0;
-}
-
 .message-count {
   font-family: 'Gotham Bold';
-  font-size: 40px;
+  font-size: 42px;
   font-weight: bold;
   line-height: 1.19;
   letter-spacing: -0.5px;
   color: #f9214f;
   padding-bottom: 2vh;
-}
-
-.message-small {
-  font-family: 'Gotham Light';
-  font-size: 15px;
-  line-height: 2.25;
-  letter-spacing: 0.1px;
-  color: #928ea0;
-}
-
-.message-earn {
-  font-family: 'Gotham Light';
-  color: #928ea0;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.2px;
-  padding: 1vh 0;
 }
 
 .dot-dot {
@@ -1047,13 +1048,9 @@ body {
     width: 45vw;
     height: 45vh;
   }
-  .message-text{
-    font-size: 18px;
-  }
-  .message-earn{
-    font-size: 18px;
-  }
-  .message-small{
+  .message-text,
+  .message-earn,
+  .message-small {
     font-size: 13px;
   }
   .contact-fetch{
@@ -1126,10 +1123,8 @@ body {
     height: 40vh;
   }
   .message-text,
-  .message-earn{
-   font-size: 13px;
-  }
-  .message-small{
+  .message-earn,
+  .message-small {
     font-size: 11px;
   }
   .contact-fetch{
@@ -1234,7 +1229,7 @@ body {
   }
   .message-text,
   .message-earn{
-   font-size: 12px;
+   font-size: 11px;
   }
   .message-small{
     display: none;

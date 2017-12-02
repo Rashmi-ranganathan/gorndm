@@ -16,7 +16,7 @@ const prependUNCPath = function(path, type) {
 const options = { url: prependUNCPath, noCSS: false };
 const styliner = new Styliner(baseDir, options);
 
-const transport = nodemailer.createTransport({
+const noreply = nodemailer.createTransport({
   service: 'Gmail',
   auth: {
     user: 'no-reply@gorndm.com',
@@ -24,9 +24,21 @@ const transport = nodemailer.createTransport({
   }
 });
 
-const FROM_ADDRESS = 'no-reply@gorndm.com';
+const bala = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: 'bala@gorndm.com',
+    pass: 'E4Z-zn2-GyU-c5h'
+  }
+});
 
-const prepareMail = function(toList, template, title, data) {
+const transport = [bala, noreply];
+
+const FROM_ADDRESS = ['bala@gorndm.com', 'no-reply@gorndm.com'];
+const testingEmail = 'rashmi05rash@gmail.com';
+
+const prepareMail = function(toList, template, title, data, accountId) {
+  let TO_ADDRESS = process.env.NODE_ENV === "production" ? toList : testingEmail;
   return new Promise(function(resolve, reject) {
     fs.readFile(template, 'utf8', function(err, file) {
       if (err) {
@@ -36,15 +48,14 @@ const prepareMail = function(toList, template, title, data) {
         styliner.processHTML(file).then(source => {
           let splitSource = source.split('<"data">');
           source = splitSource[0] + data + splitSource[1];
-          console.log('source : ', source)
           const mailOptions = {
-            from: "RNDM <" + FROM_ADDRESS + ">",
-            to: toList,
+            from: "RNDM <" + FROM_ADDRESS[accountId] + ">",
+            to: TO_ADDRESS,
             replyTo: FROM_ADDRESS,
             subject: title,
             html: source
           };
-          transport.sendMail(mailOptions)
+          transport[accountId].sendMail(mailOptions)
             .then(result => {
               resolve(result);
             })
@@ -63,7 +74,7 @@ let email = {
     const title = 'Welcome to RNDM';
     return new Promise(function(resolve, reject) {
 
-      prepareMail(userEmail, template, title, userName).then(result => {
+      prepareMail(userEmail, template, title, userName, 0).then(result => {
           resolve(result.response);
         })
         .catch(error => {
@@ -78,7 +89,7 @@ let email = {
     const title = 'Invited to RNDM';
     return new Promise(function(resolve, reject) {
 
-      prepareMail(list, template, title, waitingList).then(result => {
+      prepareMail(list, template, title, waitingList, 1).then(result => {
           console.log(result)
           resolve(result.response);
         })
